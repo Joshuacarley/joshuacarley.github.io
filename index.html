@@ -1,1 +1,5 @@
-Hello world
+{% for job in site.data.resume.experience %}
+<p class="company"> {{job.title}} </p>
+<p class="name"> {{job.name}} </p>
+<p class="desc"> {{job.description}} </p>
+{% endfor %}
