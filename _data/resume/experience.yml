@@ -1,4 +1,24 @@
--   job: intel 
-    name: software engineer
-    description: foo 
+- company: Intel 
+  title: Graphics Software Engineer
+  time: June  2012 - Current
+  location: Folsom, CA
+  items:
+    - action: Developed graphics kernel DSL, GPGPU framework, and a random test generator in the primary  tool chain. 
+      result: Making it possible to discontinue a specialized tool saving two engineers worth of effort. 
+    - action: Collaborated with customers to design a new testing methodology. 
+      result: Saving eight quarters of development effort for their team.  
+    - action: Designed and implemented a multithreaded regression system for our integration tool
+      result: Enabling  continuous regression testing across multiple targets and projects each with different constraints.   
+    - action: Developed a test content simplification tool to help low level execution environments execute validation content.  
+      result: Reducing duplicated effort across teams and enabled all of manufacturing validation for leading products. 
+    - action: Developed a low level concurrency  framework for test content using a task queue model.
+      result: Allowing multithreaded test content to execute a single threaded environments .
+    - action: Implemented a per process memory manager with a page fault and cache invalidation handler.
+      result: Enabling the synthetic validation of OpenCL 2.0 shared virtual memory requirements.  
+- company: Cazoodle
+  title: Software Engineer
+  time: February  2012 - May 2012, Champaign IL
+  items:
+    - action: Developed a natural language processing pipeline for cleaning and analyzing  data. 
+    - result: Reducing development effort to implement new feature for the web front end.
 
