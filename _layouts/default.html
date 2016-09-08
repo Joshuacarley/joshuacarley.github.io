@@ -1,6 +1,27 @@
 <!doctype html>
 <html>
-    <body>
-            {{ content }}
-    </body>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+	</head>
+	<style>
+		.content {margin-left:auto;margin-right:auto; max-width: 960px; }
+		.header {margin-left:auto;margin-right:auto; margin-top: 10px;}
+		.headertitle {width:38.2%; margin-left:10px; font-family: Georgia,Times,Times New Roman,serif; font-size:40px; letter-spacing: 2px; display:inline-block;}
+		.links { float:right; display:inline-block;  font-family: Georgia,Times,Times New Roman,serif; font-size:20px; letter-spacing: 1px; margin-top: 20px;}
+	</style>
+
+	<body>
+		<div class="content">
+			<div class="header">
+				<div class="headertitle">Joshua Carley</div>
+				<div class="links">
+					<a href="" class="">Contact</a>
+					<a href="" class="">Projects</a>
+					<a href="" class="">Articles</a>
+				</div>
+			</div>
+			<hr>
+			{{ content }}
+		</div>
+	</body>
 </html>

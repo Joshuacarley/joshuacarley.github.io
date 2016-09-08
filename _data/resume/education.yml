@@ -3,7 +3,13 @@
   time: Fall  2014 - Fall  2016 (Expected) 
   gpa: Current GPA 4.0  
   location: Atlanta, GA
+  items:
+    - description: projects here 
+
 - school: University of Illinois 
   degree: Bachelors in Computer Engineering
   time: Fall  2007 - Spring  2012  
   location: Urbana-Champaign, IL
+  items:
+    - description: Vice-president of the Alpha Kappa Lambda fraternity 
+    - description: Recognized as on of the top interns at Yahoo! 

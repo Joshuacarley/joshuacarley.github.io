@@ -12,7 +12,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline; 
 	box-sizing: border-box; }
 
-.section { font-size: 211.8%;letter-spacing: 0px; margin-bottom: 20px;  position: relative; }
+.section { font-size: 100%;letter-spacing: 2px; }
 
 .container {
     max-width: 960px;
@@ -21,15 +21,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: Georgia,Times,Times New Roman,serif;
 }
 
-dl { margin-bottom: 20px; }
+dl { margin-bottom: 10px; }
 
 dt, dd { display: inline-block; vertical-align: top; margin-bottom: 20px; }
-.infoheader { width: 38.2%; font-weight: bold; font-size: 261.8%}  
+.infoheader { width: 38.2%; }  
 
-.jobheader, .schoolheader { width: 38.2%; padding-left: 5%; }
-.company, .school { font-size: 161.8%; font-weight: bold; }
-.title, .degree {	font-size: 100%;}
-.time{	font-size: 61.8%;}
+.jobheader, .schoolheader { width: 38.2%; padding-left: 5%; padding-right:20px; }
+.company, .school { font-size: 100%; font-weight: bold; }
+.title, .degree { font-size: 100%; }
+.time{ font-size: 61.8%;}
+.name { font-size: 161.8%; font-weight: bold;}
 
 .jobdescription, .schooldescription { width: 61.8%; }
 .infodescription { text-align:left; width: 61.8%; }
@@ -40,18 +41,8 @@ dt, dd { display: inline-block; vertical-align: top; margin-bottom: 20px; }
 </style>
 
 <div class="container">
-	<dl class="info">
-		<dt class="infoheader">
-			{{site.data.resume.info.name}}
-		</dt><!--
-		--><dd class="infodescription">
-			<em>{{site.data.resume.info.title}}</em>
-			<p>{{site.data.resume.info.email}}</p>
-			<p>{{site.data.resume.info.phone}}</p>
-			<p>{{site.data.resume.info.location}}</p>
-		</dd >
-	</dl>
-	<p class="section">Education</p>
+	<p class="section">Education</p> 
+	<hr>
 	<dl class="education">
 		{% for degree in site.data.resume.education %}
 		<dt class="schoolheader">
@@ -66,11 +57,21 @@ dt, dd { display: inline-block; vertical-align: top; margin-bottom: 20px; }
 			</p>
 		</dt><!--
 		--><dd class="schooldescription">
-			<em class="result">{{degree.gpa}}</em>
+			<ul class="notes">
+			{% if degree.gpa %}
+			<li class="note"><em class="result">{{degree.gpa}}</em></li>
+			{% endif %}
+			{% for note in degree.items%}
+				<li class="note">
+					{{note.description}} 
+				</li>
+			{% endfor %}
+			</ul>
 		</dd >
 		{% endfor %}
 	</dl>
 	<p class="section">Experience</p>
+	<hr>
 	<dl class="jobhistory">
 		{% for job in site.data.resume.experience %}
 		<dt class="jobheader">
