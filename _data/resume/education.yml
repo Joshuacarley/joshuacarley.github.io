@@ -3,8 +3,8 @@
   time: Fall  2014 - Fall  2016 (Expected) 
   gpa: Current GPA 4.0  
   location: Atlanta, GA
-  items:
-    - description: projects here 
+  projects:
+    - name: 2016-09-09-QLearning
 
 - school: University of Illinois 
   degree: Bachelors in Computer Engineering
