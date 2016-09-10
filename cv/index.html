@@ -24,7 +24,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 dl { margin-bottom: 10px; }
 
 dt, dd { display: inline-block; vertical-align: top; margin-bottom: 20px; }
-.infoheader { width: 38.2%; }  
+.contact, .info {display: inline-block; vertical-align: top;} 
+.infoheader, .contact { width: 38.2%; }  
 
 .jobheader, .skillsheader, .schoolheader { width: 38.2%; padding-left: 5%; padding-right:20px; }
 .company, .school, .catagory { font-size: 100%; font-weight: bold; }
@@ -41,6 +42,14 @@ a { color:#000000}
 </style>
 
 <div class="container">
+	<div class="section">Contact</div> 
+	<hr>
+	<div class="contact"></div> 
+	<ul class="info">
+		<li><a class="link first" href="mailto:email@joshuacarley.com" target="_top">Email: email@JoshuaCarley.com </a></li>
+		<li><a class="link" href="https://www.linkedin.com/in/joshua-carley-626372a">LinkedIn: https://www.linkedin.com/in/joshua-carley-626372a</a></li>
+		<li><a class="link" href="https://www.github.com/joshuacarley">GitHub: https://www.github.com/joshuacarley</a></li>
+	</ul>
 	<p class="section">Education</p> 
 	<hr>
 	<dl class="education">
@@ -62,8 +71,8 @@ a { color:#000000}
 			<li class="note"><em class="result">{{degree.gpa}}</em></li>
 			<li class="note">
 				Projects: 
-				<a href="{% post_url 2016-09-09-QLearning %}"> Q-learning</a> (built a reinforcement learning freamework from scratch), 
-				<a href="{% post_url 2016-09-08-autoclahe %}"> Automatic histogram equalization</a> (extended an image filter in a novel way to improve usablity and results)  
+				<a href="{% post_url 2016-09-09-QLearning %}"> Q-learning</a> (built a reinforcement learning framework from scratch), 
+				<a href="{% post_url 2016-09-08-autoclahe %}"> Automatic histogram equalization</a> (extended an image filter in a novel way to improve usablity and performance)  
 			</li>
 			{% endif %}
 			{% for note in degree.items%}
