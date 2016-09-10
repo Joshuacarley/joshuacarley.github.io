@@ -26,13 +26,12 @@ dl { margin-bottom: 10px; }
 dt, dd { display: inline-block; vertical-align: top; margin-bottom: 20px; }
 .infoheader { width: 38.2%; }  
 
-.jobheader, .schoolheader { width: 38.2%; padding-left: 5%; padding-right:20px; }
-.company, .school { font-size: 100%; font-weight: bold; }
+.jobheader, .skillsheader, .schoolheader { width: 38.2%; padding-left: 5%; padding-right:20px; }
+.company, .school, .catagory { font-size: 100%; font-weight: bold; }
 .title, .degree { font-size: 100%; }
 .time{ font-size: 61.8%;}
-.name { font-size: 161.8%; font-weight: bold;}
 
-.jobdescription, .schooldescription { width: 61.8%; }
+.jobdescription, .skillsdescription, .schooldescription { width: 61.8%; }
 .infodescription { text-align:left; width: 61.8%; }
 .result{  font-size: 100%; font-weight: bold; }
 a { color:#000000}
@@ -63,8 +62,8 @@ a { color:#000000}
 			<li class="note"><em class="result">{{degree.gpa}}</em></li>
 			<li class="note">
 				Projects: 
-				<a href="{% post_url 2016-09-09-QLearning %}"> Q-learning</a>, 
-				<a href="{% post_url 2016-09-08-autoclahe %}"> Automatic histogram equalization</a>
+				<a href="{% post_url 2016-09-09-QLearning %}"> Q-learning</a> (built a reinforcement learning freamework from scratch), 
+				<a href="{% post_url 2016-09-08-autoclahe %}"> Automatic histogram equalization</a> (extended an image filter in a novel way to improve usablity and results)  
 			</li>
 			{% endif %}
 			{% for note in degree.items%}
@@ -104,5 +103,33 @@ a { color:#000000}
 			</ul>
 		</dd >
 		{% endfor %}
+	</dl>
+	<p class="section">Skills</p>
+	<hr>
+	<dl class="skills">
+		<dt class="skillsheader">
+			<p class="catagory">
+				Programming Lanuages
+			</p>
+			<p class="Title">
+				Years of experience in brackets
+			</p>
+		</dt><!--
+		--><dd class="skillsdescription">
+			<ul class="keyresults">
+				<li> C# (4), C++ (2), Ruby (2), Python (3), Java (2) </li> 
+			</ul>
+		</dd >
+		<dt class="skillsheader">
+			<p class="catagory">
+				Framework/Concepts	
+			</p>
+		</dt><!--
+		--><dd class="skillsdescription">
+			<ul class="keyresults">
+				<li> Concepts: Machine Learning, Reinforcement Learning, Image Processing, Data Analysis, Automated Testing</li> 
+				<li> Frameworks: Numpy, Scipy, Matplotlib, OpenCV</li> 
+			</ul
+		</dd >
 	</dl>
 </div >
