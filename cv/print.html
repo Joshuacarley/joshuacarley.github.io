@@ -1,0 +1,171 @@
+---
+layout: empty 
+---
+<!doctype html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+	</head>
+	<style>
+		body {font-family: Georgia,Times,Times New Roman,serif;}
+		.content {margin-left:auto; margin-right:auto; max-width: 960px; }
+		.header {margin-left:auto;margin-right:auto; }
+		.headertitle {width:38.2%; padding-left:10px;  font-size:40px; letter-spacing: 2px; display:inline-block;}
+		.footertitle {padding-bottom:20px; width:38.2%; padding-left:10px;  font-size:20px; letter-spacing: 1px; display:inline-block;}
+		.links { float:right; display:inline-block;   font-size:20px; letter-spacing: 1px; margin-top: 20px; color:#000000;}
+		.link { margin-right: 5px;}
+		.link:link,.link:visited  {color:#000000;text-decoration:none;}
+		.link:hover {text-decoration:underline;}
+		.first { margin-right: 0px;}
+
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike,sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+			margin: 0; 
+			padding: 0;
+			border: 0; 
+			font-size: 100%; 
+			font: inherit; 
+			vertical-align: baseline; 
+			box-sizing: border-box; }
+
+		.section { font-size: 100%;letter-spacing: 2px; }
+
+		.container {
+		    max-width: 960px;
+		    margin: 0;
+		    padding: 20px;
+		    font-family: Georgia,Times,Times New Roman,serif;
+		}
+
+		dl { margin-bottom: 10px; }
+
+		dt, dd { display: inline-block; vertical-align: top; margin-bottom: 20px; }
+		.contact, .info {display: inline-block; vertical-align: top;} 
+		.infoheader, .contact { width: 38.2%; }  
+
+		.jobheader, .skillsheader, .schoolheader { width: 38.2%; padding-left: 5%; padding-right:20px; }
+		.company, .school, .catagory { font-size: 100%; font-weight: bold; }
+		.title, .degree { font-size: 100%; }
+		.time{ font-size: 61.8%;}
+
+		.jobdescription, .skillsdescription, .schooldescription { width: 61.8%; }
+		.infodescription { text-align:left; width: 61.8%; }
+		.result{  font-size: 100%; font-weight: bold; }
+		a { color:#000000}
+
+
+
+	</style>
+
+	<body>
+		<div class="content">
+			<div class="header">
+				<div class="headertitle">Joshua Carley</div>
+			</div>
+			<hr>
+			<div class="container">
+				<div class="section">Contact</div> 
+				<hr>
+				<div class="contact"></div> 
+				<ul class="info">
+					<li><a class="link first" f="mailto:email@joshuacarley.com" target="_top">Email: email@JoshuaCarley.com </a></li>
+					<li>Phone: (847)-920-4225</li>
+					<li>Personal Website: JoshuaCarley.com/cv/</li>
+				</ul>
+				<p class="section">Education</p> 
+				<hr>
+				<dl class="education">
+					{% for degree in site.data.resume.education %}
+					<dt class="schoolheader">
+						<p class="school">
+							{{degree.school}}
+						</p>
+						<p class="degree">
+							{{degree.degree}} 
+						</p>
+						<p class="time">
+							{{degree.time}}, {{degree.location}}  
+						</p>
+					</dt><!--
+					--><dd class="schooldescription">
+						<ul class="notes">
+						{% if degree.gpa %}
+						<li class="note"><em class="result">{{degree.gpa}}</em></li>
+						<li class="note">
+							Projects:  
+							 Q-learning Framework, automatic histogram equalization, machine learnning Stock trading policy, student class scheduler based on linear programming.  
+						</li>
+						{% endif %}
+						{% for note in degree.items%}
+							<li class="note">
+								{{note.description}} 
+							</li>
+						{% endfor %}
+						</ul>
+					</dd >
+					{% endfor %}
+				</dl>
+				<p class="section">Experience</p>
+				<hr>
+				<dl class="jobhistory">
+					{% for job in site.data.resume.experience %}
+					<dt class="jobheader">
+						<p class="company">
+							{{job.company}}
+						</p>
+						<p class="title">
+							{{job.title}} 
+						</p>
+						<p class="time">
+							{{job.time}}, {{job.location}}  
+						</p>
+					</dt><!--
+					--><dd class="jobdescription">
+						<ul class="keyresults">
+						{% for action in job.items%}
+							<li class="action">
+								{{action.action}} 
+								<em class="result">
+								{{action.result}}
+								</em>
+							</li>
+						{% endfor %}
+						</ul>
+					</dd >
+					{% endfor %}
+				</dl>
+				<p class="section">Skills</p>
+				<hr>
+				<dl class="skills">
+					<dt class="skillsheader">
+						<p class="catagory">
+							Programming Lanuages
+						</p>
+						<p class="Title">
+							Years of experience in brackets
+						</p>
+					</dt><!--
+					--><dd class="skillsdescription">
+						<ul class="keyresults">
+							<li> C# (4), C++ (2), Ruby (2), Python (3), Java (2) </li> 
+						</ul>
+					</dd >
+					<dt class="skillsheader">
+						<p class="catagory">
+							Framework/Concepts	
+						</p>
+					</dt><!--
+					--><dd class="skillsdescription">
+						<ul class="keyresults">
+							<li> Concepts: Machine Learning, Reinforcement Learning, Image Processing, Data Analysis, Automated Testing</li> 
+							<li> Frameworks: Numpy, Scipy, Matplotlib, OpenCV</li> 
+						</ul
+					</dd >
+				</dl>
+			</div >
+			<hr>
+		</div>
+	</body>
+</html>
+
+
+
